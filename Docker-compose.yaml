@@ -1,0 +1,31 @@
+version: '3'
+services:
+  magic:
+    image: mageai/mageai:latest
+    command: mage start magic-zoomcamp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      USER_CODE_PATH: /home/src
+      POSTGRES_DBNAME: postgres
+      POSTGRES_SCHEMA: magic
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+    ports:
+      - 6789:6789
+    volumes:
+      - D:\Shair storae\Project\Data pipeline\Uber\Volume:/home/src
+    restart: on-failure:5
+  postgres:
+    image: postgres:14
+    restart: on-failure
+    container_name: S-postgres 
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
