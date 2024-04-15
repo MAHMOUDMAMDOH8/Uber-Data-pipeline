@@ -1,4 +1,4 @@
-# BreadcrumbsUber-Data-pipeline
+# Uber-Data-pipeline
 
 The goal of this project is to perform data analytics on Uber data using various tools and technologies, including snowflake ,potgres Storage, Python,  Mage Data Pipeline Tool,  and Power bi.
 ## Architecture
